@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container simple">
+    <form action="" method="POST">
+        <div id="simple-cont">
+            {% if not update %}
+                <input type="text" required name="empid" placeholder="Employee ID">
+                <button name='load' value="submit" class="main-btn">Load</button>
+            {% endif %}
+
+            {% if update %}
+                <input type="text" required name="name" value="{{update[1]}}" placeholder="Name">
+                <input type="text" required name="salary" value="{{update[2]}}" placeholder="Salary">
+                <input type="text" required name="state" value="{{update[3]}}" placeholder="State">
+                <input type="text" required name="education" value="{{update[4]}}" placeholder="Education">
+                <input type="text" required name="pid" value="{{update[5]}}" placeholder="Project ID">
+                <input style="display: none;" type="text" required name="empid" value="{{update[0]}}">
+                
+
+                <button name="update" value="submit" class="main-btn">Update</button>
+            {% endif %}
+        </div>
+    </form>
+</div>
+{% endblock %}

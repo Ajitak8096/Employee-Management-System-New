@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container home">
+    <div id="home-cont">
+        <h3 style="margin-bottom: 0px; font-size: 20px; color: black; text-shadow: #92e3c3 0px 0px 10px;">Logged In As : {{sessionData['username']}}</h3>
+        <button class="main-btn" onclick="window.location.href='/view'">View Employee</button>
+        <button class="main-btn" onclick="window.location.href='/add'" >Add Employee</button>
+        <button class="main-btn" onclick="window.location.href='/update'">Update Employee</button>
+        <button class="main-btn" onclick="window.location.href='/delete'" >Delete Employee</button>
+
+        <button class="main-btn" onclick="window.location.href='/top'"  >Top Performing Employee's</button>
+        <button class="main-btn" onclick="window.location.href='/dis'">Employee Distribution</button>
+        <button class="main-btn" onclick="window.location.href='/all'" >All Employee's</button>
+        <button class="main-btn" onclick="window.location.href='/logout' ">Logout</button>
+    </div>
+</div>
+{% endblock %}

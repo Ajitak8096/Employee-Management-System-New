@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container simple">
+    <form action="" method="POST">
+        <div id="simple-cont">
+            <input type="text" required name="empid" placeholder="Employee ID">
+            <button value="submit" class="main-btn">View</button>
+
+            {% if data %}
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>EMP ID</th>
+                            <th>Name</th>
+                            <th>Salary</th>
+                            <th>State</th>
+                            <th>Education</th>
+                            <th>PID</th>
+                            <th>Unique ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in data %}
+                            <tr>
+                                <td>{{i[0]}}</td>
+                                <td>{{i[1]}}</td>
+                                <td>{{i[2]}}</td>
+                                <td>{{i[3]}}</td>
+                                <td>{{i[4]}}</td>
+                                <td>{{i[5]}}</td>
+                                <td>{{i[6]}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            {% endif %}
+
+        </div>
+    </form>
+</div>
+{% endblock %}

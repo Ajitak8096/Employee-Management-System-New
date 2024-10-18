@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container simple">
+    <form action="" method="POST">
+        <div id="simple-cont">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Unique ID</th>
+                            <th>Name</th>
+                            <th>State</th>
+                            <th>Education</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in data %}
+                            <tr>
+                                <td>{{i[0]}}</td>
+                                <td>{{i[1]}}</td>
+                                <td>{{i[2]}}</td>
+                                <td>{{i[3]}}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+    </form>
+</div>
+{% endblock %}

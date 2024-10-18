@@ -1,0 +1,30 @@
+EMS
+
+
+- Management 
+-- id INT PRIMARY KEY
+-- username varchar(50) NOT NULL 
+-- password varchar(50) NOT NULL 
+
+- Development 
+-- id varchar(50) PRIMARY KEY
+-- name varchar(50) NOT NULL
+-- salary DECIMAL(10, 2) NOT NULL     
+-- state VARCHAR(50) NOT NULL                    
+-- education VARCHAR(100) NOT NULL              
+-- pid INT,FOREIGN KEY (pid) REFERENCES project(pid)
+
+
+- Testing 
+-- id varchar(50) PRIMARY KEY
+-- name varchar(50) NOT NULL
+-- salary DECIMAL(10, 2) NOT NULL       
+-- state VARCHAR(50) NOT NULL        
+-- education VARCHAR(100) NOT NULL              
+-- pid INT,FOREIGN KEY (pid) REFERENCES project(pid)
+
+
+- Projects
+-- pid INT PRIMARY KEY AUTO_INCEREMENT 
+-- name VACHAR(50) NOT NULL
+-- deadline DATE NOT NULL

@@ -1,0 +1,167 @@
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #000;
+    background-image: linear-gradient(180deg, rgb(204, 187, 221) 77%, rgb(143, 143, 143) 77%);
+    color: rgb(255,255,255);
+    font-family: monospace;
+}
+
+.container{
+    margin: 10px auto;
+    width: 1000px;
+    height: 100%;
+}
+
+.login{
+    background-image: url('images/data.png');
+    background-size: 900px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.home{
+    background-image: url('images/office.png');
+    background-size: 1100px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.simple{
+    background-image: url('images/work.png');
+    background-size: 900px;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+}
+
+.main-btn{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+    width: 50%;
+    font-family: monospace;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 500ms ease box-shadow, 500ms ease scale;
+}
+
+.main-btn:hover{
+    box-shadow: inset black 500px 0px 100px;
+    scale: 1.2;
+}
+
+#login-cont{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#simple-cont{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+input[type=text] , input[type=password]{
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-weight: 600;
+    font-size: 30px;
+    width: 50%;
+    font-family: monospace;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 500ms ease box-shadow;
+}
+
+input[type=text]:hover , input[type=password]:hover{
+    box-shadow: inset black 500px 0px 100px;
+}
+
+#home-cont{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.notification-stack{
+    z-index: 2 !important;
+    position: fixed; width: 400px; bottom: 0px;
+    right: 0px;
+}
+
+.notification{
+    color: black; background-color: white; bottom: 0; padding: 10px; width: auto; border-radius: 5px; margin: 10px; z-index: 1; font-weight: bolder; max-width: 100%;
+    font-size: 20px;
+    box-shadow: inset 0px 0px 0px white, inset 0px -4px 0px #4bd39c;
+}
+
+.notifanim{
+    animation: notificationanimation 10s forwards linear;
+}
+
+
+@keyframes notificationanimation {
+    0% {box-shadow: inset 0px 0px 0px white, inset 0px -4px 0px #4bd39c;}
+    95% {opacity: 1;}
+    100% {box-shadow: inset -400px 0px 0px white, inset 0px -4px 0px #4bd39c; opacity: 0; visibility: hidden;}
+}
+
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 500px;
+    width: 100%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #4bd39c;
+    text-align: left;
+    border-bottom: #4bd39c 2px solid;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+.styled-table tbody tr{
+    font-weight: bold;
+    color: white;
+}
+
+#home-btn{
+    position: fixed; bottom: 0px; left: 0px; background-color: #4bd39c; padding: 20px; border-radius: 100%; margin: 20px;
+    transition: 500ms ease scale , 500ms ease box-shadow;
+    cursor: pointer;
+}
+
+#home-btn:hover{
+    scale: 1.2;
+    box-shadow: #92e3c3 0px 0px 5px;
+}

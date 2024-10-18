@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container simple">
+    <form action="" method="POST">
+        <div id="simple-cont">
+            <input type="text" required name="empid" placeholder="Employee ID">
+            <input type="text" required name="name" placeholder="Name">
+            <input type="text" required name="salary" placeholder="Salary">
+            <input type="text" required name="state" placeholder="State">
+            <input type="text" required name="education" placeholder="Education">
+            <input type="text" required name="pid" placeholder="Project ID">
+            <input type="text" required name="uniqueid" placeholder="Unique ID">
+            <button value="submit" class="main-btn">Add</button>
+        </div>
+    </form>
+</div>
+{% endblock %}
