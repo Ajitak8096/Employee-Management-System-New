@@ -2,7 +2,7 @@ EMS
 
 
 - Management 
--- id INT PRIMARY KEY
+-- id INT PRIMARY KEY AUTO_INCREMENT
 -- username varchar(50) NOT NULL 
 -- password varchar(50) NOT NULL 
 
@@ -13,7 +13,7 @@ EMS
 -- state VARCHAR(50) NOT NULL                    
 -- education VARCHAR(100) NOT NULL              
 -- pid INT,FOREIGN KEY (pid) REFERENCES project(pid)
-
+-- uniquieid varchar(50) NOT NULL
 
 - Testing 
 -- id varchar(50) PRIMARY KEY
@@ -22,9 +22,10 @@ EMS
 -- state VARCHAR(50) NOT NULL        
 -- education VARCHAR(100) NOT NULL              
 -- pid INT,FOREIGN KEY (pid) REFERENCES project(pid)
+-- uniquieid varchar(50) NOT NULL
 
 
 - Projects
--- pid INT PRIMARY KEY AUTO_INCEREMENT 
+-- pid INT PRIMARY KEY AUTO_INCREMENT 
 -- name VACHAR(50) NOT NULL
 -- deadline DATE NOT NULL
