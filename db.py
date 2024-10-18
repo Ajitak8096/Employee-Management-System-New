@@ -61,19 +61,19 @@ class EMS:
         except Exception as e:
             return e, False
         
-    def add(self,empid,name,salary,state,education,pid,uniqueid):
+    def add(self,empid,name,salary,state,education,pid):
         self.checkConnection()
         try:
             if 'TEMP' in empid:
-                query = 'insert into Testing(id,name,salary,state,education,pid,uniqueid) values(%s,%s, %s, %s ,%s , %s , %s);'
-                params  = (empid,name,salary,state,education,pid , uniqueid)
+                query = 'insert into Testing(id,name,salary,state,education,pid) values(%s,%s, %s, %s ,%s , %s);'
+                params  = (empid,name,salary,state,education,pid)
                 self.emsCursor.execute(query,params)
                 self.ems.commit()
                 return True, True 
             
             elif 'DEMP' in empid:
-                query = 'insert into Development(id,name,salary,state,education,pid,uniqueid) values(%s,%s, %s, %s ,%s , %s , %s);'
-                params  = (empid,name,salary,state,education,pid, uniqueid)
+                query = 'insert into Development(id,name,salary,state,education,pid) values(%s,%s, %s, %s ,%s , %s);'
+                params  = (empid,name,salary,state,education,pid)
                 self.emsCursor.execute(query,params)
                 self.ems.commit()
                 return True, True 
@@ -147,7 +147,7 @@ class EMS:
     def top(self):
         self.checkConnection()
         try:
-            query = 'SELECT * FROM ( select uniqueid,name,state,education,salary from Testing union select uniqueid,name,state,education,salary from Development ) as Combined_employees WHERE salary > (SELECT AVG(salary) AS average_salary FROM ( SELECT salary FROM Testing UNION ALL SELECT salary FROM Development ) AS combined_salaries);'
+            query = 'SELECT * FROM ( select name,state,education,salary from Testing union select name,state,education,salary from Development ) as Combined_employees WHERE salary >= (SELECT AVG(salary) AS average_salary FROM ( SELECT salary FROM Testing UNION ALL SELECT salary FROM Development ) AS combined_salaries);'
             self.emsCursor.execute(query)
             return [i for i in self.emsCursor] , True 
 
@@ -157,7 +157,7 @@ class EMS:
     def all(self):
         self.checkConnection()
         try:
-            query = 'SELECT * FROM ( select uniqueid,name,state,education from Testing union select uniqueid,name,state,education from Development ) as Combined_employees;'
+            query = 'SELECT * FROM ( select name,state,education,"Testing",pid from Testing union select name,state,education,"Development",pid from Development ) as Combined_employees INNER JOIN Projects ON Combined_employees.pid = Projects.pid;'
             self.emsCursor.execute(query)
             return [i for i in self.emsCursor] , True 
 

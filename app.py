@@ -71,8 +71,7 @@ def add():
             state = request.form['state']
             education = request.form['education']
             pid = int(request.form['pid'])
-            uniqueid = request.form['uniqueid']
-            data = db_usr.add(empid,name,salary,state,education,pid,uniqueid)
+            data = db_usr.add(empid,name,salary,state,education,pid)
             if data[1]:
                 if data[0] == True:
                     flash(f'Succesfully Added {name}')
