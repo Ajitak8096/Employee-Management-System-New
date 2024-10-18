@@ -13,7 +13,6 @@ EMS
 -- state VARCHAR(50) NOT NULL                    
 -- education VARCHAR(100) NOT NULL              
 -- pid INT,FOREIGN KEY (pid) REFERENCES project(pid)
--- uniquieid varchar(50) NOT NULL
 
 - Testing 
 -- id varchar(50) PRIMARY KEY
@@ -22,8 +21,6 @@ EMS
 -- state VARCHAR(50) NOT NULL        
 -- education VARCHAR(100) NOT NULL              
 -- pid INT,FOREIGN KEY (pid) REFERENCES project(pid)
--- uniquieid varchar(50) NOT NULL
-
 
 - Projects
 -- pid INT PRIMARY KEY AUTO_INCREMENT 
