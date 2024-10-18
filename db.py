@@ -167,7 +167,7 @@ class EMS:
     def dis(self):
         self.checkConnection()
         try:
-            query = 'SELECT state,COUNT(*) FROM ( select state from Testing union select state from Development ) as Combined_employees GROUP BY state;'
+            query = 'SELECT state,COUNT(*) FROM ( select * from Testing union select * from Development ) as Combined_employees GROUP BY state;'
             self.emsCursor.execute(query)
             return [i for i in self.emsCursor] , True 
 
